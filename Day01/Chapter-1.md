@@ -44,7 +44,7 @@ fn main() {
 
 ### C. Compiling and Running
 
-In your terminal, compile the source file using `rustc`:
+In terminal, compile the source file using `rustc`:
 
 ```bash
 # 1. Compile the source code into a binary
@@ -63,7 +63,7 @@ Cargo is the standard tool used across the Rust ecosystem to handle project mana
 
 ### A. Creating a New Project with Cargo
 
-Run the following command in your terminal:
+Run the following command in terminal:
 
 ```bash
 cargo new hello_cargo
@@ -104,7 +104,7 @@ Cargo simplifies the development workflow through four key commands:
 
 #### 1. `cargo build`
 
-Compiles your code and creates an executable file inside `target/debug/hello_cargo` (or `.exe` on Windows).
+Compiles code and creates an executable file inside `target/debug/hello_cargo` (or `.exe` on Windows).
 
 ```bash
 cargo build
@@ -120,7 +120,7 @@ cargo run
 
 #### 3. `cargo check`
 
-Scans your code for syntax, type, and ownership errors **without generating a binary**.
+Scans code for syntax, type, and ownership errors **without generating a binary**.
 
 ```bash
 cargo check
@@ -130,7 +130,7 @@ cargo check
 
 #### 4. `cargo build --release`
 
-Compiles your code with **high-level compiler optimizations** for production deployment. It outputs the optimized binary in `target/release/`.
+Compiles code with **high-level compiler optimizations** for production deployment. It outputs the optimized binary in `target/release/`.
 
 ```bash
 cargo build --release
