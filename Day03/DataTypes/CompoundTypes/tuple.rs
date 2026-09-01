@@ -1,4 +1,6 @@
 fn main(){
+    // tuple is a compound type which can hold multiple values of different types
+    // tuple can't be resize at any cost at all it can not shrink or grow 
     //     : (i32, f64, u8) is optional because Rust can infer the type of the tuple from the values assigned to it
     let tup: (i32, f64, u8) = (500, 6.4, 1); // tuple is a compound type which can hold multiple values of different types
     //different ways to define a tuple
