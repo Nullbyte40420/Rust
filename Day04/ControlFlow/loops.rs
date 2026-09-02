@@ -17,4 +17,23 @@ fn main(){
         }
     };
     println!("The value of y is: {y}"); // this will print 20
+
+    let mut counter = 0;
+    `counter: loop {
+        println!("Counter: {counter}");
+        let mut remaining = 10;
+
+        loop {
+            println!("Remaining: {remaining}");
+            if remaining == 9 {
+                break; // this will break the inner loop
+            }
+            if counter == 2 {
+                break 'counter; // this will break the outer loop
+            }
+            remaining -= 1;
+        }
+        counter += 1;
+    }
+    println!("Counter: {counter}"); // this will print 2
 }
