@@ -3,7 +3,8 @@
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
 
-struct Person(String, String);
+// unit struct 
+struct AlwaysEqual;
 
 struct User {
     active: bool,
@@ -15,7 +16,7 @@ struct User {
 fn main() {
     let black = Color(0, 0, 0);
     let origin = Point(0, 0, 0);
-
+    let subject = AlwaysEqual;
     let user1 = User {
         active: true,
         username: String::from("someusername123"),
@@ -35,5 +36,5 @@ fn main() {
    let black = Color(0, 0, 0);
    let origin = Point(0, 0, 0);
    let balck2 = black; // this will move the ownership of black to balck2, so we can't use black anymore
-   
+
     }
