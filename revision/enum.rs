@@ -7,6 +7,7 @@ enum IPAddr {
 }
 
 #[allow(dead_code)]// this will avoid the warning of unused fields in the instance of the struct
+#[derive(Debug)]// this will implement the Debug trait for the struct
 enum Option<T> {
     Some(T),
     None,
@@ -53,14 +54,23 @@ fn main() {
 
     let some_number: Option<i32> = Option::Some(5);
     let some_string: Option<String> = Option::Some(String::from("Hello"));
+    let x = 5;
+    if let Option::Some(value) = some_number {
+        println!("The sum of {} and {} is {}", x, value, x + value);
+    } else {
+        println!("No number");
+    }
     match some_number {
         Option::Some(value) => println!("The number is: {}", value),
         Option::None => println!("No number"),
     }
     match some_string {
-        Option::Some(value) => println!("The string is: {}", value),
+        // this cause value movement because the value of some_string is moved to the match statement and we can no longer use it after that
+        //Option::Some(value) => println!("The string is: {}", value),
+        Option::Some(ref value) => println!("The string is: {}", value), // this will not cause value movement because we are using reference to the value of some_string and we can still use it after that
         Option::None => println!("No string"),
     }
+    println!("The string is: {:?}", some_string);
 
     let none_number: Option<i32> = Option::None;
     match none_number {
