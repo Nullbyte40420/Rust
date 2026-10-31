@@ -6,6 +6,12 @@ enum IPAddr {
     V6(String),
 }
 
+#[allow(dead_code)]// this will avoid the warning of unused fields in the instance of the struct
+enum Option<T> {
+    Some(T),
+    None,
+}
+
 impl IPAddr {
     fn display(&self) {
         match self {
@@ -44,4 +50,21 @@ fn main() {
     ip1.display();
     ip1.delete();
     ip2.delete();
+
+    let some_number: Option<i32> = Option::Some(5);
+    let some_string: Option<String> = Option::Some(String::from("Hello"));
+    match some_number {
+        Option::Some(value) => println!("The number is: {}", value),
+        Option::None => println!("No number"),
+    }
+    match some_string {
+        Option::Some(value) => println!("The string is: {}", value),
+        Option::None => println!("No string"),
+    }
+
+    let none_number: Option<i32> = Option::None;
+    match none_number {
+        Option::Some(value) => println!("The number is: {}", value),
+        Option::None => println!("No number"),
+    }
 }
