@@ -10,7 +10,7 @@ fn main() {
     // ---------- creating a hash map ----------
 
     // there is no macro like vec! for hash maps, so we create it with new and add stuff with insert
-    let mut scores = HashMap::new();
+    let mut scores: HashMap<String, i32> = HashMap::new();
 
     scores.insert(String::from("Blue"), 10);
     scores.insert(String::from("Yellow"), 50);
@@ -43,7 +43,7 @@ fn main() {
     let field_name = String::from("Favorite color");
     let field_value = String::from("Blue");
 
-    let mut map = HashMap::new();
+    let mut map: HashMap<String, String> = HashMap::new();
     map.insert(field_name, field_value);
     // println!("{field_name}"); // error: field_name was moved into the map
     // println!("{field_value}"); // error: same for field_value
@@ -53,7 +53,7 @@ fn main() {
     // (this is the lifetimes stuff from chapter 10, so for now just know it works like this)
     let key2 = String::from("language");
     let value2 = String::from("rust");
-    let mut ref_map = HashMap::new();
+    let mut ref_map: HashMap<&String, &String> = HashMap::new();
     ref_map.insert(&key2, &value2);
     println!("ref_map: {:?}, key2 is still usable: {key2}", ref_map);
 
@@ -62,7 +62,7 @@ fn main() {
     // when a key already has a value we can: overwrite it, keep the old one, or combine old and new
 
     // 1. overwriting a value
-    let mut overwrite = HashMap::new();
+    let mut overwrite: HashMap<String, i32> = HashMap::new();
     overwrite.insert(String::from("Blue"), 10);
     overwrite.insert(String::from("Blue"), 25); // same key, so the old value 10 is replaced
     println!("overwrite: {:?}", overwrite); // {"Blue": 25}
